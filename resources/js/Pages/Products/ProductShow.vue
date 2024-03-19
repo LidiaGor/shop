@@ -60,7 +60,7 @@ amount.value = usePage().props.cart.find(x => x.product_id === props.product.id)
 
 const getTotalPrice = () => {
     let price = (props.product?.lowprice) ? props.product?.lowprice : props.product?.price
-    return (price * amount.value).toFixed(2)
+    return ((price * amount.value).toFixed(2))/100
 }
 
 const checkFavorites = () => {
@@ -258,7 +258,7 @@ const addToCart = () => {
                                     class="price d-flex flex-column align-items-start"
                                 >
                                     {{
-                                        Intl.NumberFormat('ru-RU', {minimumFractionDigits: 2}).format(props.product.price)
+                                        Intl.NumberFormat('ru-RU', {minimumFractionDigits: 2}).format((props.product.price)/100)
                                     }} ₽
                                     <a href="#myprice" data-bs-toggle="modal">Предложите свою цену</a>
                                 </div>
