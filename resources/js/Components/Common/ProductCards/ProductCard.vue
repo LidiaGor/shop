@@ -81,7 +81,7 @@ const toFavorites = () => {
 
                 <template v-else>
                     <span class="basic">
-                        {{ Intl.NumberFormat('ru-RU').format(product.price) }} ₽
+                        {{ Intl.NumberFormat('ru-RU').format(product.price/100) }} ₽
                     </span>
                 </template>
             </div>
